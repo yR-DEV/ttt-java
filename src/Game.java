@@ -89,9 +89,17 @@ public class Game {
 		return false;
 	}
 	
+	// Hard codes in matches for the two separate diagonal win conditions. 
+		// The first one starts top left and goes to the bottom right
+		// the second conditional checks for top right diagonal win that goes bottom left
 	private boolean checkGameBoardDiagonals() {
-		
-		return false;
+		if ((checkForThreeMatches(gameBoard[0][0], gameBoard[1][1], gameBoard[2][2]) == true) 
+				|| checkForThreeMatches(gameBoard[0][2], gameBoard[1][1], gameBoard[2][0]) == true) {
+			System.out.println("DIAGONAL WIN!");
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	// Returns true or false making sure that 1 is not a dash
@@ -116,7 +124,7 @@ public class Game {
 				}
 			}
 		}
-		
+		System.out.println("Please enter ONLY a number for the row and column.");
 		return false;
 	}
  }
