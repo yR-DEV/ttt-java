@@ -7,12 +7,14 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		String userInput;
 		
-		System.out.println("WELCOME TO TIC TAC TOE CLI!");
-		System.out.println("WHAT WOULD YOU LIKE TO DO: ");
-		System.out.println("Your selections fine person:");
-		System.out.println("   - game/play - to play TTT!");
-		System.out.println("   - hs/scores to see scores!");
-		System.out.println("   - exit/quit to leave application!");
+		System.out.println("-------------------------------------");
+		System.out.println("---  WELCOME TO TIC TAC TOE CLI!  ---");
+		System.out.println("---  WHAT WOULD YOU LIKE TO DO:   ---");
+		System.out.println("--- Your selections fine person:  ---");
+		System.out.println("    - game/play - to play TTT!      -");
+		System.out.println("    - hs/scores to see scores!      -");
+		System.out.println("    - exit/quit to leave!           -");
+		System.out.println("-------------------------------------");
 
 		
 		userInput = scanner.nextLine().trim().toLowerCase();

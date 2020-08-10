@@ -1,15 +1,18 @@
-import java.util.Date;
-
 public class Save {
 
 	private int gameNumber;
-	private char gameWinner;
-	private Date dateSaved;
+	private WinningPlayer winningPlayer;
 	
-	public Save(int gameNumber, char gameWinner, Date dateSaved) {
+	public Save(int gameNumber, char winningPlayer) {
 		this.gameNumber = gameNumber;
-		this.gameWinner = gameWinner;
-		this.dateSaved = dateSaved;
+		switch(winningPlayer) {
+		case 'x': 
+			this.winningPlayer = WinningPlayer.X;
+			break;
+		case 'o':
+			this.winningPlayer = WinningPlayer.O;
+			break;
+		}
 	}
 	
 	private enum WinningPlayer {
@@ -22,4 +25,20 @@ public class Save {
 		}
 	}
 	
+	public int getGameNumber() {
+		return gameNumber;
+	}
+
+	public void setGameNumber(int gameNumber) {
+		this.gameNumber = gameNumber;
+	}
+
+	public void setWinningPlayer(WinningPlayer winningPlayer) throws WrongPlayerException {
+		this.winningPlayer = winningPlayer;
+	}
+
+	@Override
+	public String toString() {
+		return "Save [gameNumber=" + gameNumber + ", winningPlayer=" + winningPlayer + "]";
+	}
 }
