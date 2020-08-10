@@ -15,6 +15,14 @@ public class Game {
 		return currentPlayer;
 	}
 	
+	public void changeCurrentPlayer() {
+		if (currentPlayer == 'o') {
+			currentPlayer = 'x';
+		} else {
+			currentPlayer = 'o';
+		}
+	}
+	
 	// This method loops through the entire game board first by rows then columns
 	// This method sets up each square on the game board as blank/not taken 
 	// indicated by a dash '-'
@@ -48,6 +56,26 @@ public class Game {
 	}
 	
 	public boolean isGameBoardFull() {
+		
+		return false;
+	}
+	
+	public boolean checkGameBoardForWin() {
+		
+		return false;
+	}
+	
+	public boolean checkGameBoardRows() {
+		
+		return false;
+	}
+	
+	public boolean checkGameBoardColumns() {
+		
+		return false;
+	}
+	
+	public boolean checkGameBoardDiagonals() {
 		
 		return false;
 	}
