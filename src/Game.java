@@ -86,7 +86,6 @@ public class Game {
 				}
 			}
 		}
-		System.out.println("Scratch game! Play again!");
 		return scratchGame;
 	}
 	

@@ -29,6 +29,23 @@ public class GameRunner {
 			
 		} while(!ttt.checkGameBoardForWin() && !ttt.checkGameBoardFull());
 		
+		// If there is no win condition AND gameboard is full sout TIE GAME!
+		if (!ttt.checkGameBoardForWin() && ttt.checkGameBoardFull()) {
+			System.out.println("Scratch game! Play again!");
+		} else {
+			
+			char winner;
+			
+			System.out.println("The board looks like this :D");
+			ttt.printBoardToConsole();
+			ttt.changeCurrentPlayer();
+			winner = Character.toUpperCase(ttt.getCurrentPlayer());
+			System.out.println(winner + " IS THE WINNAR!");
+			System.out.println("-------------");
+			Main.main(null);
+			
+		}
+		
 	}
 	
 }
