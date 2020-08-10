@@ -59,24 +59,45 @@ public class Game {
 		return false;
 	}
 	
+	// Checks for the three types of win conditions possible on a tic tac toe board
 	public boolean checkGameBoardForWin() {
+		return (checkGameBoardDiagonals() || checkGameBoardRows() || checkGameBoardColumns());
+	}
+	
+	// Using loop to cycle through each row to see if 3 in a row exist
+		// calls on checkForThreeMatches by using loop iterator for row number
+		// and hard coding in each column
+	private boolean checkGameBoardRows() {
+		for (int i = 0; i < 3; i++) {
+			if (checkForThreeMatches(gameBoard[i][0], gameBoard[i][1], gameBoard[i][2]) ) {
+				System.out.println("SOMEONE WON ROWS!");
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	// Does the same thing as the checking row method, just hard codes in each row 
+		// and uses the iterator for the column
+	private boolean checkGameBoardColumns() {
+		for (int i = 0; i < 3; i++) {
+            if (checkForThreeMatches(gameBoard[0][i], gameBoard[1][i], gameBoard[2][i]) == true) {
+                System.out.println("SOMEONE WON COLUMS");
+            	return true;
+            }
+        }
+		return false;
+	}
+	
+	private boolean checkGameBoardDiagonals() {
 		
 		return false;
 	}
 	
-	public boolean checkGameBoardRows() {
-		
-		return false;
-	}
-	
-	public boolean checkGameBoardColumns() {
-		
-		return false;
-	}
-	
-	public boolean checkGameBoardDiagonals() {
-		
-		return false;
+	// Returns true or false making sure that 1 is not a dash
+		// and that sq1 is equal to sq2 which is equal to sq3
+	private boolean checkForThreeMatches(char square1, char square2, char square3) {
+		return ((square1 != '-') && (square1 == square2) && (square2 == square3));
 	}
 	
 	// Placing a mark at the square by the row and column entered by user
