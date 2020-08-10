@@ -1,21 +1,25 @@
+import java.io.BufferedReader;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 public class Saves {
 	
 	public static void readMatchHistory() {
 		
-		String saveFile = "saves.txt";
+		String saveFile = "saves.csv";
 		File saveFileCheck = new File(saveFile);
 		
-		Save firstSave = new Save(1, 'X');
-		Save secondSave = new Save(2, 'O');
-		
 		if (saveFileCheck.exists()) {
-			System.out.println("exists");
+			System.out.println("Recorded saves exist!");
 		} else {
 			System.out.println("doesn't exist");
+			try {
+				BufferedReader csvReader = new BufferedReader(new FileReader(saveFile));
+				
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

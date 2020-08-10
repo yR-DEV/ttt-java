@@ -3,15 +3,18 @@ public class Save {
 	private int gameNumber;
 	private WinningPlayer winningPlayer;
 	
-	public Save(int gameNumber, char winningPlayer) {
+	public Save(int gameNumber, String input) throws WrongPlayerException {
 		this.gameNumber = gameNumber;
-		switch(winningPlayer) {
-		case 'x': 
+		
+		switch(input) {
+		case "x": 
 			this.winningPlayer = WinningPlayer.X;
 			break;
-		case 'o':
+		case "o":
 			this.winningPlayer = WinningPlayer.O;
 			break;
+		default:
+			throw new WrongPlayerException("invalid player");
 		}
 	}
 	
