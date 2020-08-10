@@ -1,12 +1,11 @@
 public class Game {
 
-	private char[][] board;
+	private char[][] gameBoard;
 	private char currentPlayer;
 	
 	public Game() {
 		// 2-Dimensional Array that is 3 by 3 board of tic tac toe
-//		System.out.println("WORKING GAME INIT!");
-		board = new char[3][3];
+		gameBoard = new char[3][3];
 		currentPlayer = 'x';
 		initializeGameBoard();
 	}
@@ -31,7 +30,7 @@ public class Game {
 		for (int i = 0; i < 3; i ++) {
 			// Columns Loop
 			for (int j = 0; j < 3; j++) {
-				board[i][j] = '-';
+				gameBoard[i][j] = '-';
 			}
 		}
 	}
@@ -47,7 +46,7 @@ public class Game {
 		for (int i = 0; i < 3; i++) {
             System.out.print("| ");
             for (int j = 0; j < 3; j++) {
-                System.out.print(board[i][j] + " | ");
+                System.out.print(gameBoard[i][j] + " | ");
             }
             // Adding blank println and line below to make it look good :)
             System.out.println();
@@ -55,7 +54,7 @@ public class Game {
         }
 	}
 	
-	public boolean isGameBoardFull() {
+	public boolean checkGameBoardFull() {
 		
 		return false;
 	}
@@ -76,6 +75,26 @@ public class Game {
 	}
 	
 	public boolean checkGameBoardDiagonals() {
+		
+		return false;
+	}
+	
+	// Placing a mark at the square by the row and column entered by user
+	public boolean placeTurn(int row, int column) {
+		// Making sure that the entered row and column are within
+			// the boards parameters.
+		if ((row < 3) && (row >= 0)) {
+			// Checking the column entered to make sure it is between 0 and 2
+			if ((column < 3) && (column >= 0)) {
+				// Checking whether or not the square is played in yet
+					// By default unplayed squares have a - in them
+				if(gameBoard[row][column] == '-') {
+					// If the square hasn't been played in change the - to the current player (X or O)
+					gameBoard[row][column] = currentPlayer;
+					return true;
+				}
+			}
+		}
 		
 		return false;
 	}
