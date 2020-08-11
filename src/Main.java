@@ -12,7 +12,7 @@ public class Main {
 		System.out.println("---  WHAT WOULD YOU LIKE TO DO:   ---");
 		System.out.println("--- Your selections fine person:  ---");
 		System.out.println("    - game/play - to play TTT!      -");
-		System.out.println("    - hs/scores to see scores!      -");
+		System.out.println("    - hs/scores to see scores!(wip) -");
 		System.out.println("    - exit/quit to leave!           -");
 		System.out.println("-------------------------------------");
 

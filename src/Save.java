@@ -21,10 +21,10 @@ public class Save {
 	private enum WinningPlayer {
 		X('x'), O('o');
 		
-		public final char player;
+		public final char winningPlayer;
 		
-		WinningPlayer(char player) {
-			this.player = player;
+		WinningPlayer(char winningPlayer) {
+			this.winningPlayer = winningPlayer;
 		}
 	}
 	
